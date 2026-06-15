@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a2332;
+  --navy: #0f1c2e;
+  --navy-light: #1a2d45;
+  --gold: #9a7340;
+  --gold-light: #b8925a;
+  --slate: #5a6472;
+  --muted: #f5f5f3;
+  --line: #e8e6e1;
+  --off-white: #faf9f7;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-navy: var(--navy);
+  --color-navy-light: var(--navy-light);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-slate: var(--slate);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-off-white: var(--off-white);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-cormorant);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--gold-light) 35%, white);
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  font-size: 1rem;
+}
+
+.container-page {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+}
+
+.section-spacing {
+  @apply py-20 sm:py-28 lg:py-32;
+}
+
+.field {
+  @apply w-full border border-line/80 bg-white px-4 py-3.5 text-navy outline-none transition-colors;
+}
+
+.field:focus {
+  @apply border-gold/60 ring-1 ring-gold/20;
+}
+
+.section-eyebrow {
+  @apply mb-4 text-sm font-normal tracking-wide text-gold;
+}
+
+.section-title {
+  @apply font-serif text-4xl font-light leading-[1.15] text-navy sm:text-5xl lg:text-[3.25rem];
+}
+
+.section-lead {
+  @apply mt-5 max-w-2xl text-base leading-relaxed text-slate sm:text-lg;
+}
+
+.divider-soft {
+  @apply border-t border-line/70;
+}
