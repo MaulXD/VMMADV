@@ -87,10 +87,10 @@ export function ContactForm({ defaultArea = "", className }: ContactFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className={cn("space-y-10", className)}>
+    <form onSubmit={handleSubmit} className={cn("space-y-8", className)}>
       <FormGroup title="Seus dados" description="Para identificação e retorno do contato.">
-        <div className="grid gap-6 sm:grid-cols-2">
-          <FormField label="Nome completo" htmlFor="nome">
+        <div className="grid gap-5 sm:grid-cols-2">
+          <FormField label="Nome completo" htmlFor="nome" className="sm:col-span-2">
             <input required id="nome" name="nome" minLength={3} className="field" />
           </FormField>
           <FormField label="CPF" htmlFor="cpf" hint="Somente números">
@@ -117,7 +117,7 @@ export function ContactForm({ defaultArea = "", className }: ContactFormProps) {
               className="field"
             />
           </FormField>
-          <FormField label="Área de atuação" htmlFor="area">
+          <FormField label="Área de atuação" htmlFor="area" className="sm:col-span-2">
             <select
               required
               id="area"
@@ -142,15 +142,15 @@ export function ContactForm({ defaultArea = "", className }: ContactFormProps) {
         title="Sua demanda"
         description="Descreva o que você precisa para direcionarmos corretamente."
       >
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-3 sm:grid-cols-2">
           {formMotives.map((item) => (
             <label
               key={item.value}
               className={cn(
-                "flex cursor-pointer items-start gap-3 p-5 transition-colors",
+                "flex min-h-[4.5rem] cursor-pointer items-start gap-3 border p-4 transition-colors",
                 motivo === item.value
-                  ? "bg-off-white ring-1 ring-gold/40"
-                  : "bg-muted/50 hover:bg-off-white",
+                  ? "border-gold/40 bg-off-white ring-1 ring-gold/25"
+                  : "border-line bg-white hover:border-gold/25 hover:bg-off-white",
               )}
             >
               <input
@@ -159,7 +159,7 @@ export function ContactForm({ defaultArea = "", className }: ContactFormProps) {
                 value={item.value}
                 checked={motivo === item.value}
                 onChange={() => setMotivo(item.value)}
-                className="mt-1"
+                className="mt-0.5 shrink-0"
               />
               <span className="text-sm leading-snug text-navy">{item.label}</span>
             </label>
@@ -173,19 +173,19 @@ export function ContactForm({ defaultArea = "", className }: ContactFormProps) {
               id="motivoOutro"
               name="motivoOutro"
               rows={3}
-              className="field resize-y min-h-[96px]"
+              className="field min-h-[96px] resize-y"
               placeholder="Conte brevemente sua situação..."
             />
           </FormField>
         ) : null}
       </FormGroup>
 
-      <label className="flex items-start gap-3 bg-muted/40 p-5 text-sm leading-relaxed text-slate">
+      <label className="flex items-start gap-3 bg-muted/40 p-4 text-sm leading-relaxed text-slate">
         <input
           type="checkbox"
           checked={consent}
           onChange={(event) => setConsent(event.target.checked)}
-          className="mt-0.5"
+          className="mt-0.5 shrink-0"
           required
         />
         <span>
@@ -208,7 +208,7 @@ export function ContactForm({ defaultArea = "", className }: ContactFormProps) {
         disabled={loading || !motivo}
         variant="whatsapp"
         iconRight="send"
-        className="w-full sm:w-auto"
+        className="w-full"
       >
         {loading ? "Enviando..." : "Enviar e continuar no WhatsApp"}
       </Button>

@@ -34,11 +34,13 @@ type FormGroupProps = {
 
 export function FormGroup({ title, description, children }: FormGroupProps) {
   return (
-    <fieldset className="space-y-6">
-      <legend className="mb-2 block w-full">
-        <span className="font-serif text-2xl font-light text-navy">{title}</span>
+    <fieldset className="space-y-5">
+      <legend className="mb-1 block w-full">
+        <span className="font-serif text-xl font-light text-navy sm:text-2xl">
+          {title}
+        </span>
         {description ? (
-          <span className="mt-2 block text-sm font-normal text-slate">
+          <span className="mt-1.5 block text-sm font-normal leading-relaxed text-slate">
             {description}
           </span>
         ) : null}

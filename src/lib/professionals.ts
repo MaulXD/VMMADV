@@ -5,7 +5,8 @@ export type Professional = {
   name: string;
   role: string;
   credential?: string;
-  specialties?: string[];
+  bio: string;
+  specialties: string[];
   phone: string;
   phoneHref: string;
   email: string;
@@ -32,6 +33,13 @@ export const professionals: Professional[] = [
     name: "Dr. Victor de Medeiros Morais",
     role: "Fundador",
     credential: siteConfig.oab,
+    bio: "Advogado com atuação consultiva e contenciosa em demandas de alta complexidade, com destaque em causas contra entes federativos, precatórios, litígios tributários e previdenciários em todo o território nacional.",
+    specialties: [
+      "Direito Público",
+      "Direito Tributário",
+      "Direito Previdenciário",
+      "Precatórios e RPV",
+    ],
     phone: siteConfig.contact.whatsappDisplay,
     phoneHref: `https://wa.me/${siteConfig.contact.whatsapp}`,
     email: siteConfig.contact.email,
@@ -42,6 +50,7 @@ export const professionals: Professional[] = [
     id: "hevelyn-dantas",
     name: "Hevelyn Carla Dantas Lima",
     role: "Assessora Jurídica",
+    bio: "Atua na análise e condução de demandas empresariais, previdenciárias e contratuais, com foco em orientação técnica objetiva e acompanhamento próximo do cliente.",
     specialties: [
       "Direito Empresarial",
       "Direito Previdenciário",
@@ -58,6 +67,7 @@ export const professionals: Professional[] = [
     name: "Dr. Luís Carlos dos Santos",
     role: "Advogado",
     credential: "OAB/UF 000",
+    bio: "Experiência em defesa criminal, consultoria eleitoral e contencioso administrativo, com atuação estratégica em procedimentos sensíveis e prazos curtos.",
     specialties: [
       "Direito Criminal",
       "Direito Eleitoral",
@@ -74,6 +84,7 @@ export const professionals: Professional[] = [
     name: "Dr. Valdenor de Lima Morais",
     role: "Advogado",
     credential: "OAB/UF 00000",
+    bio: "Atua em regularização documental, licenciamento e conformidade regulatória empresarial, com assessoria técnica para adequação às exigências legais.",
     specialties: [
       "Consultoria jurídica em regularização e conformidade documental",
       "Assessoria para licenciamento e conformidade regulatória empresarial",

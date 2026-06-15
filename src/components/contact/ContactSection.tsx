@@ -21,24 +21,24 @@ export function ContactSection({
     <section className="section-spacing bg-muted">
       <div className="container-page">
         <AnimateIn>
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-20 xl:gap-28">
-            <div className="lg:py-4">
+          <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,32rem)] lg:gap-16 xl:gap-20">
+            <div className="max-w-lg lg:pt-2">
               <p className="section-eyebrow">Contato</p>
               <h2 className="section-title">{title}</h2>
               <p className="section-lead">{siteConfig.hero.consultive}</p>
 
               {!compact ? (
-                <ul className="mt-12 space-y-6 text-sm text-slate">
+                <ul className="mt-10 space-y-5 text-sm text-slate">
                   <li>
                     <Button href={buildWhatsAppUrl()} external variant="whatsapp">
                       WhatsApp
                     </Button>
                   </li>
                   <li className="flex items-center gap-3">
-                    <Icon name="mail" size={18} className="text-gold" />
+                    <Icon name="mail" size={18} className="shrink-0 text-gold" />
                     <a
                       href={`mailto:${siteConfig.contact.email}`}
-                      className="hover:text-navy"
+                      className="break-all hover:text-navy"
                     >
                       {siteConfig.contact.email}
                     </a>
@@ -51,7 +51,7 @@ export function ContactSection({
               ) : null}
             </div>
 
-            <div className="bg-white p-8 sm:p-10 lg:p-12">
+            <div className="w-full border border-line/80 bg-white p-6 sm:p-8">
               <ContactForm defaultArea={defaultArea} />
             </div>
           </div>
