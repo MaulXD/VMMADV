@@ -51,7 +51,27 @@ h4 {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--gold-light) 35%, white);
+  background: var(--gold-light);
+  color: var(--navy);
+}
+
+::-moz-selection {
+  background: var(--gold-light);
+  color: var(--navy);
+}
+
+footer ::selection,
+header ::selection,
+.bg-navy ::selection {
+  background: var(--gold);
+  color: #ffffff;
+}
+
+footer ::-moz-selection,
+header ::-moz-selection,
+.bg-navy ::-moz-selection {
+  background: var(--gold);
+  color: #ffffff;
 }
 
 input,

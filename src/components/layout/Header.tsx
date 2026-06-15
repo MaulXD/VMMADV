@@ -15,7 +15,7 @@ export function Header() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0a0a0a]/95 backdrop-blur-md">
       <div className="container-page flex items-center justify-between gap-6 py-4 lg:py-5">
         <Link
           href="/"
@@ -41,7 +41,9 @@ export function Header() {
                 href={link.href}
                 className={cn(
                   "relative py-1 text-sm tracking-wide transition-colors",
-                  active ? "text-navy" : "text-slate hover:text-navy",
+                  active
+                    ? "text-white"
+                    : "text-white/75 hover:text-white",
                 )}
               >
                 {link.label}
@@ -61,7 +63,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex items-center justify-center p-2 text-navy lg:hidden"
+          className="inline-flex items-center justify-center p-2 text-white lg:hidden"
           aria-expanded={open}
           aria-label={open ? "Fechar menu" : "Abrir menu"}
           onClick={() => setOpen((value) => !value)}
@@ -72,7 +74,7 @@ export function Header() {
 
       {open ? (
         <motion.div
-          className="divider-soft bg-background px-5 py-6 lg:hidden"
+          className="border-t border-white/10 bg-[#0a0a0a] px-5 py-6 lg:hidden"
           initial={reduceMotion ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
         >
@@ -81,7 +83,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="py-3 font-serif text-xl font-light text-navy"
+                className="py-3 font-serif text-xl font-light text-white/90 transition-colors hover:text-white"
                 onClick={() => setOpen(false)}
               >
                 {link.label}

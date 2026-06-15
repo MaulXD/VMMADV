@@ -77,6 +77,7 @@ export const footerLinks = {
     { href: "/profissionais", label: "Profissionais" },
     { href: "/areas-de-atuacao", label: "Áreas de Atuação" },
     { href: "/precatorios-rpv", label: "Precatórios & RPV" },
+    { href: "/contato", label: "Contato" },
     { href: "/trabalhe-conosco", label: "Trabalhe Conosco" },
   ],
   content: [
