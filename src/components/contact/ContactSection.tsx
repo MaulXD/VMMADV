@@ -58,10 +58,8 @@ export function ContactSection({
             <div className="form-panel">
               <div className="form-panel-header">
                 <p className="form-eyebrow">Atendimento</p>
-                <h3 className="font-serif text-2xl font-light text-navy sm:text-3xl">
-                  Solicitar contato
-                </h3>
-                <p className="mt-2 font-serif text-sm leading-relaxed text-slate">
+                <h3 className="form-panel-title">Solicitar contato</h3>
+                <p className="mt-2 font-serif-body text-sm leading-relaxed text-slate">
                   Preencha os dados abaixo. Ao enviar, você continuará a conversa no
                   WhatsApp.
                 </p>
@@ -73,7 +71,7 @@ export function ContactSection({
           </div>
 
           {!compact ? (
-            <p className="mt-10 text-center font-serif text-xs text-slate">
+            <p className="mt-10 text-center font-serif-body text-xs text-slate">
               <Link href="/contato" className="text-gold underline">
                 Formulário de contato
               </Link>

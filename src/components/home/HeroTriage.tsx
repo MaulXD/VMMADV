@@ -16,7 +16,7 @@ export function HeroTriage() {
         <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
           <div className="max-w-md">
             <p className="section-eyebrow">Triagem</p>
-            <h2 className="font-serif text-3xl font-light text-navy sm:text-4xl">
+            <h2 className="font-serif text-3xl text-navy sm:text-4xl">
               Em que podemos ajudar?
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-slate">

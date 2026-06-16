@@ -184,7 +184,7 @@ export function ContactForm({ defaultArea = "", className }: ContactFormProps) {
                       <span className="h-1.5 w-1.5 bg-white" />
                     ) : null}
                   </span>
-                  <span className="font-serif text-base leading-snug text-navy">
+                  <span className="font-serif-body text-base leading-snug text-navy">
                     {item.label}
                   </span>
                 </label>

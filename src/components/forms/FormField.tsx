@@ -46,18 +46,14 @@ export function FormGroup({ step, title, description, children }: FormGroupProps
       <legend className="mb-1 block w-full">
         <div className="flex items-start gap-4">
           {step ? (
-            <span className="font-serif text-3xl font-light leading-none text-gold/80 tabular-nums">
+            <span className="font-serif text-3xl font-medium leading-none text-gold/80 tabular-nums">
               {step}
             </span>
           ) : null}
           <div className="min-w-0 flex-1">
-            <span className="block font-serif text-2xl font-light leading-tight text-navy">
-              {title}
-            </span>
+            <span className="form-group-title">{title}</span>
             {description ? (
-              <span className="mt-2 block font-serif text-sm font-normal leading-relaxed text-slate">
-                {description}
-              </span>
+              <span className="form-group-description">{description}</span>
             ) : null}
           </div>
         </div>

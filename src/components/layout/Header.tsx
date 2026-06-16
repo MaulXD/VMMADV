@@ -40,7 +40,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "relative py-1 font-serif text-[15px] tracking-wide transition-colors",
+                  "relative py-1 font-serif text-[15px] font-medium tracking-wide transition-colors",
                   active
                     ? "text-white"
                     : "text-white/75 hover:text-white",
@@ -83,7 +83,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="py-3 font-serif text-xl font-light text-white/90 transition-colors hover:text-white"
+                className="py-3 font-serif text-xl font-medium text-white/90 transition-colors hover:text-white"
                 onClick={() => setOpen(false)}
               >
                 {link.label}

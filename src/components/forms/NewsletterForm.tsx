@@ -81,7 +81,7 @@ export function NewsletterForm({
               : "border-line bg-white",
         )}
       >
-        <p className="font-serif text-xl font-light">Newsletter jurídica</p>
+        <p className="font-serif text-xl font-semibold">Newsletter jurídica</p>
         <p className={cn("mt-3 text-sm leading-relaxed", isDark ? "text-white/70" : "text-slate")}>
           Inscrição confirmada para{" "}
           <span className={cn("font-medium", isDark ? "text-white" : "text-navy")}>
@@ -105,7 +105,7 @@ export function NewsletterForm({
             : "border-line bg-white",
       )}
     >
-      <p className={cn("font-serif text-xl font-light", isDark ? "text-white" : "text-navy")}>
+      <p className={cn("font-serif text-xl font-semibold", isDark ? "text-white" : "text-navy")}>
         Newsletter jurídica
       </p>
       <p

@@ -30,7 +30,7 @@ export default function BlogPage() {
                   year: "numeric",
                 })}
               </p>
-              <h2 className="mt-3 font-serif text-2xl font-light text-navy sm:text-3xl">
+              <h2 className="mt-3 font-serif text-2xl text-navy sm:text-3xl">
                 <Link
                   href={`/blog/${post.slug}`}
                   className="group inline-flex items-start gap-3 transition-colors hover:text-gold"

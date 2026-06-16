@@ -59,9 +59,7 @@ export default async function LandingPage({ params }: PageProps) {
         <div className="form-panel max-w-2xl">
           <div className="form-panel-header">
             <p className="form-eyebrow">Atendimento</p>
-            <h3 className="font-serif text-2xl font-light text-navy">
-              Solicitar contato
-            </h3>
+            <h3 className="form-panel-title">Solicitar contato</h3>
           </div>
           <div className="form-panel-body">
             <ContactForm defaultArea={area.slug} />

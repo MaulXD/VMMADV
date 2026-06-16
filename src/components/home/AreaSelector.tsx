@@ -11,7 +11,7 @@ export function AreaSelector() {
 
   return (
     <div className="border border-line bg-white p-6 sm:p-8">
-      <h2 className="font-serif text-2xl font-medium text-navy sm:text-3xl">
+      <h2 className="font-serif text-2xl text-navy sm:text-3xl">
         Em que podemos ajudar?
       </h2>
       <p className="mt-3 max-w-2xl text-slate">

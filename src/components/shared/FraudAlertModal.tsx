@@ -97,7 +97,7 @@ export function FraudAlertModal() {
               </p>
               <h2
                 id="fraud-alert-title"
-                className="mt-3 font-serif text-4xl font-light leading-[1.15] sm:text-[2.75rem]"
+                className="mt-3 font-serif text-4xl font-semibold leading-[1.15] sm:text-[2.75rem]"
               >
                 Alerta: prevenção
                 <span className="mt-1 block italic text-[#9a7340]">

@@ -12,7 +12,7 @@ export function PartnershipsSection() {
         {siteConfig.partnerships.map((partner) => (
           <article key={partner.shortName} className="border border-line bg-white p-6">
             <p className="section-rule">{partner.shortName}</p>
-            <h3 className="mt-3 font-serif text-xl font-medium text-navy">
+            <h3 className="mt-3 font-serif text-xl font-semibold text-navy">
               {partner.name}
             </h3>
             <p className="mt-2 text-sm text-slate">{partner.email}</p>

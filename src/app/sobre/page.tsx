@@ -24,7 +24,7 @@ export default function AboutPage() {
           <aside className="space-y-6 lg:border-l lg:border-line/70 lg:pl-12">
             <div>
               <p className="section-eyebrow">Advogado responsável</p>
-              <h2 className="mt-3 font-serif text-3xl font-light text-navy">
+              <h2 className="mt-3 font-serif text-3xl text-navy">
                 {siteConfig.founder}
               </h2>
               <p className="mt-3 text-slate">{siteConfig.oab}</p>

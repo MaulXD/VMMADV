@@ -18,7 +18,7 @@ export function AboutPreview() {
           <div className="space-y-8 lg:pl-8 lg:border-l lg:border-line/70">
             <div>
               <p className="section-eyebrow mb-0">{siteConfig.founder}</p>
-              <p className="mt-3 font-serif text-3xl font-light text-navy">
+              <p className="mt-3 font-serif text-3xl font-semibold text-navy">
                 Presença em Maceió, atuação em todo o Brasil
               </p>
             </div>

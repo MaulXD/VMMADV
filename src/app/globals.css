@@ -46,7 +46,7 @@ h2,
 h3,
 h4 {
   font-family: var(--font-cormorant), Georgia, serif;
-  font-weight: 300;
+  font-weight: 600;
   letter-spacing: 0.01em;
 }
 
@@ -97,16 +97,32 @@ textarea {
   @apply border-gold/60 bg-white ring-1 ring-gold/20;
 }
 
+.font-serif-body {
+  @apply font-serif font-medium;
+}
+
 .section-eyebrow {
-  @apply mb-4 font-serif text-sm font-normal tracking-[0.14em] text-gold uppercase;
+  @apply mb-4 font-serif text-sm font-medium tracking-[0.14em] text-gold uppercase;
 }
 
 .section-title {
-  @apply font-serif text-4xl font-light leading-[1.12] text-navy sm:text-5xl lg:text-[3.25rem];
+  @apply font-serif text-4xl font-semibold leading-[1.12] text-navy sm:text-5xl lg:text-[3.25rem];
 }
 
 .section-lead {
-  @apply mt-5 max-w-2xl font-serif text-base font-normal leading-relaxed text-slate sm:text-lg;
+  @apply mt-5 max-w-2xl font-serif text-base font-medium leading-relaxed text-slate sm:text-lg;
+}
+
+.form-panel-title {
+  @apply font-serif text-2xl font-semibold leading-tight text-navy sm:text-3xl;
+}
+
+.form-group-title {
+  @apply font-serif text-2xl font-semibold leading-tight text-navy;
+}
+
+.form-group-description {
+  @apply mt-2 block font-serif text-sm font-medium leading-relaxed text-slate;
 }
 
 .form-panel {
@@ -122,11 +138,11 @@ textarea {
 }
 
 .form-eyebrow {
-  @apply mb-2 font-serif text-xs tracking-[0.2em] text-gold uppercase;
+  @apply mb-2 font-serif text-xs font-medium tracking-[0.2em] text-gold uppercase;
 }
 
 .field-label {
-  @apply block font-serif text-lg font-normal leading-snug text-navy;
+  @apply block font-serif text-lg font-medium leading-snug text-navy;
 }
 
 .field-hint {

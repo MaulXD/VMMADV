@@ -39,7 +39,7 @@ export function ProfessionalCard({
             {professional.credential ? (
               <p className="mt-2 text-sm text-slate">{professional.credential}</p>
             ) : null}
-            <h2 className="mt-4 font-serif text-3xl font-light leading-tight text-navy sm:text-4xl">
+            <h2 className="mt-4 font-serif text-3xl font-semibold leading-tight text-navy sm:text-4xl">
               {professional.name}
             </h2>
           </div>

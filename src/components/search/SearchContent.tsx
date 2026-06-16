@@ -72,7 +72,7 @@ export function SearchContent() {
           >
             <div>
               <p className="section-rule mb-2">{item.type}</p>
-              <p className="font-serif text-xl font-medium text-navy">
+              <p className="font-serif text-xl font-semibold text-navy">
                 {item.title}
               </p>
             </div>

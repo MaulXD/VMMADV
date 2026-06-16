@@ -106,7 +106,7 @@ export function HeroCarousel() {
                 </p>
               </div>
 
-              <h1 className="mt-6 font-serif text-[clamp(2.75rem,6vw,4.75rem)] font-light leading-[1.05] tracking-tight">
+              <h1 className="mt-6 font-serif text-[clamp(2.75rem,6vw,4.75rem)] font-semibold leading-[1.05] tracking-tight">
                 {slide.title}
               </h1>
 
@@ -159,7 +159,7 @@ export function HeroCarousel() {
           </div>
 
           <div className="flex items-center gap-4">
-            <span className="font-serif text-3xl font-light tabular-nums text-gold-light">
+            <span className="font-serif text-3xl font-medium tabular-nums text-gold-light">
               {String(index + 1).padStart(2, "0")}
             </span>
             <span className="text-white/30">/</span>
