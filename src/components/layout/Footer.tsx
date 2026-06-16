@@ -13,7 +13,7 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <p className="text-xs font-medium tracking-[0.18em] text-gold-light uppercase">
+      <p className="text-xs font-medium tracking-[0.18em] text-gold-light uppercase font-serif">
         {title}
       </p>
       <ul className="mt-5 space-y-3 text-sm text-white/75">

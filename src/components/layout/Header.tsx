@@ -40,7 +40,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "relative py-1 text-sm tracking-wide transition-colors",
+                  "relative py-1 font-serif text-[15px] tracking-wide transition-colors",
                   active
                     ? "text-white"
                     : "text-white/75 hover:text-white",

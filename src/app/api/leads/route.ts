@@ -65,10 +65,13 @@ export async function POST(request: Request) {
       );
     }
 
-    const area = getAreaBySlug(body.area);
-    if (!area) {
+    const areaRecord = body.area?.trim()
+      ? getAreaBySlug(body.area.trim())
+      : undefined;
+
+    if (body.area?.trim() && !areaRecord) {
       return NextResponse.json(
-        { ok: false, error: "Selecione uma área de atuação." },
+        { ok: false, error: "Área de atuação inválida." },
         { status: 400 },
       );
     }
@@ -94,7 +97,7 @@ export async function POST(request: Request) {
       nome: body.nome.trim(),
       cpf: body.cpf,
       telefone: body.telefone,
-      area: area.title,
+      area: areaRecord?.title ?? "Não informada",
       motivo: motive.label,
       motivoOutro: body.motivoOutro?.trim() ?? "",
     };

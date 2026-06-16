@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import {
   formMotives,
@@ -87,13 +88,17 @@ export function ContactForm({ defaultArea = "", className }: ContactFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className={cn("space-y-8", className)}>
-      <FormGroup title="Seus dados" description="Para identificação e retorno do contato.">
+    <form onSubmit={handleSubmit} className={cn("space-y-9", className)}>
+      <FormGroup
+        step="01"
+        title="Seus dados"
+        description="Para identificação e retorno do contato."
+      >
         <div className="grid gap-5 sm:grid-cols-2">
           <FormField label="Nome completo" htmlFor="nome" className="sm:col-span-2">
             <input required id="nome" name="nome" minLength={3} className="field" />
           </FormField>
-          <FormField label="CPF" htmlFor="cpf" hint="Somente números">
+          <FormField label="CPF" htmlFor="cpf" hint="Campo obrigatório. Informe os 11 dígitos.">
             <input
               required
               id="cpf"
@@ -117,9 +122,14 @@ export function ContactForm({ defaultArea = "", className }: ContactFormProps) {
               className="field"
             />
           </FormField>
-          <FormField label="Área de atuação" htmlFor="area" className="sm:col-span-2">
+          <FormField
+            label="Área de atuação"
+            htmlFor="area"
+            className="sm:col-span-2"
+            optional
+            hint="Selecione apenas se já souber a área relacionada à sua demanda."
+          >
             <select
-              required
               id="area"
               name="area"
               value={area}
@@ -138,80 +148,99 @@ export function ContactForm({ defaultArea = "", className }: ContactFormProps) {
         </div>
       </FormGroup>
 
-      <FormGroup
-        title="Sua demanda"
-        description="Descreva o que você precisa para direcionarmos corretamente."
-      >
-        <div className="grid gap-3 sm:grid-cols-2">
-          {formMotives.map((item) => (
-            <label
-              key={item.value}
-              className={cn(
-                "flex min-h-[4.5rem] cursor-pointer items-start gap-3 border p-4 transition-colors",
-                motivo === item.value
-                  ? "border-gold/40 bg-off-white ring-1 ring-gold/25"
-                  : "border-line bg-white hover:border-gold/25 hover:bg-off-white",
-              )}
-            >
-              <input
-                type="radio"
-                name="motivo"
-                value={item.value}
-                checked={motivo === item.value}
-                onChange={() => setMotivo(item.value)}
-                className="mt-0.5 shrink-0"
+      <div className="border-t border-line/60 pt-9">
+        <FormGroup
+          step="02"
+          title="Sua demanda"
+          description="Descreva o que você precisa para direcionarmos corretamente."
+        >
+          <div className="grid gap-3 sm:grid-cols-2">
+            {formMotives.map((item) => {
+              const selected = motivo === item.value;
+              return (
+                <label
+                  key={item.value}
+                  className={cn(
+                    "choice-card",
+                    selected ? "choice-card-selected" : "choice-card-default",
+                  )}
+                >
+                  <input
+                    type="radio"
+                    name="motivo"
+                    value={item.value}
+                    checked={selected}
+                    onChange={() => setMotivo(item.value)}
+                    className="sr-only"
+                  />
+                  <span
+                    className={cn(
+                      "choice-marker",
+                      selected ? "choice-marker-selected" : "choice-marker-default",
+                    )}
+                    aria-hidden
+                  >
+                    {selected ? (
+                      <span className="h-1.5 w-1.5 bg-white" />
+                    ) : null}
+                  </span>
+                  <span className="font-serif text-base leading-snug text-navy">
+                    {item.label}
+                  </span>
+                </label>
+              );
+            })}
+          </div>
+
+          {motivo === "outro" ? (
+            <FormField label="Descreva o motivo" htmlFor="motivoOutro">
+              <textarea
+                required
+                id="motivoOutro"
+                name="motivoOutro"
+                rows={3}
+                className="field min-h-[96px] resize-y"
+                placeholder="Conte brevemente sua situação..."
               />
-              <span className="text-sm leading-snug text-navy">{item.label}</span>
-            </label>
-          ))}
-        </div>
+            </FormField>
+          ) : null}
+        </FormGroup>
+      </div>
 
-        {motivo === "outro" ? (
-          <FormField label="Descreva o motivo" htmlFor="motivoOutro">
-            <textarea
-              required
-              id="motivoOutro"
-              name="motivoOutro"
-              rows={3}
-              className="field min-h-[96px] resize-y"
-              placeholder="Conte brevemente sua situação..."
-            />
-          </FormField>
+      <div className="space-y-5 border-t border-line/60 pt-9">
+        <label className="flex items-start gap-3 border border-line/70 bg-off-white/80 p-4 text-sm leading-relaxed text-slate">
+          <input
+            type="checkbox"
+            checked={consent}
+            onChange={(event) => setConsent(event.target.checked)}
+            className="mt-0.5 shrink-0"
+            required
+          />
+          <span>
+            Li e concordo com a{" "}
+            <Link href="/politica-de-privacidade" className="text-gold underline">
+              Política de Privacidade
+            </Link>
+            .
+          </span>
+        </label>
+
+        {error ? (
+          <p className="border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
+            {error}
+          </p>
         ) : null}
-      </FormGroup>
 
-      <label className="flex items-start gap-3 bg-muted/40 p-4 text-sm leading-relaxed text-slate">
-        <input
-          type="checkbox"
-          checked={consent}
-          onChange={(event) => setConsent(event.target.checked)}
-          className="mt-0.5 shrink-0"
-          required
-        />
-        <span>
-          Li e concordo com a{" "}
-          <a href="/politica-de-privacidade" className="text-gold underline">
-            Política de Privacidade
-          </a>
-          .
-        </span>
-      </label>
-
-      {error ? (
-        <p className="border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
-          {error}
-        </p>
-      ) : null}
-
-      <Button
-        type="submit"
-        disabled={loading || !motivo}
-        variant="whatsapp"
-        iconRight="send"
-        className="w-full"
-      >
-        {loading ? "Enviando..." : "Enviar e continuar no WhatsApp"}
-      </Button>
+        <Button
+          type="submit"
+          disabled={loading || !motivo}
+          variant="whatsapp"
+          iconRight="send"
+          className="w-full py-4 text-base"
+        >
+          {loading ? "Enviando..." : "Enviar e continuar no WhatsApp"}
+        </Button>
+      </div>
     </form>
   );
 }

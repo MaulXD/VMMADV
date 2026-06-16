@@ -56,7 +56,17 @@ export default async function LandingPage({ params }: PageProps) {
             Falar agora no WhatsApp
           </Button>
         </div>
-        <ContactForm defaultArea={area.slug === "precatorios-rpv" ? area.slug : area.slug} />
+        <div className="form-panel max-w-2xl">
+          <div className="form-panel-header">
+            <p className="form-eyebrow">Atendimento</p>
+            <h3 className="font-serif text-2xl font-light text-navy">
+              Solicitar contato
+            </h3>
+          </div>
+          <div className="form-panel-body">
+            <ContactForm defaultArea={area.slug} />
+          </div>
+        </div>
       </Section>
     </main>
   );
