@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ProfessionalCard } from "@/components/professionals/ProfessionalCard";
 import { Section } from "@/components/ui/Section";
-import { professionals, professionalsIntro } from "@/lib/professionals";
+import { professionals } from "@/lib/professionals";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
@@ -18,36 +19,28 @@ export const metadata: Metadata = createMetadata({
 
 export default function ProfessionalsPage() {
   return (
-    <>
-      <Section
-        eyebrow={professionalsIntro.eyebrow}
-        title={professionalsIntro.quote}
-      >
-        <div className="max-w-3xl space-y-5 text-slate">
-          {professionalsIntro.paragraphs.map((paragraph) => (
-            <p key={paragraph.slice(0, 40)} className="leading-relaxed">
-              {paragraph}
-            </p>
-          ))}
-        </div>
-      </Section>
+    <Section
+      eyebrow="Equipe"
+      title="Nossos profissionais"
+      description="Conheça quem compõe o escritório e as áreas de atuação de cada membro da equipe."
+    >
+      <p className="mb-12 max-w-2xl font-serif-body text-slate">
+        Para informações institucionais sobre o escritório, visite a página{" "}
+        <Link href="/sobre" className="text-gold underline">
+          Sobre
+        </Link>
+        .
+      </p>
 
-      <Section
-        className="bg-off-white"
-        eyebrow="Equipe"
-        title="Nossos profissionais"
-        description="Conheça quem compõe o escritório e as áreas de atuação de cada membro da equipe."
-      >
-        <div className="space-y-20 lg:space-y-28">
-          {professionals.map((professional, index) => (
-            <ProfessionalCard
-              key={professional.id}
-              professional={professional}
-              reversed={index % 2 === 1}
-            />
-          ))}
-        </div>
-      </Section>
-    </>
+      <div className="space-y-20 lg:space-y-28">
+        {professionals.map((professional, index) => (
+          <ProfessionalCard
+            key={professional.id}
+            professional={professional}
+            reversed={index % 2 === 1}
+          />
+        ))}
+      </div>
+    </Section>
   );
 }
